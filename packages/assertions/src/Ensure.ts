@@ -94,6 +94,8 @@ export class Ensure<Actual> extends Interaction {
      * which verifies if the resolved value of the provided [`Answerable`](https://serenity-js.org/api/core/#Answerable)
      * meets the specified [`Expectation`](https://serenity-js.org/api/core/class/Expectation/) within the expected timeframe.
      *
+     * The Expectation is checked less and less frequently as time goes on, following a simple exponential backoff pattern.
+     *
      * If the expectation is not met by the time the timeout expires, the interaction throws an [`AssertionError`](https://serenity-js.org/api/core/class/AssertionError/).
      *
      * @param {Answerable<Actual_Type>} actual
